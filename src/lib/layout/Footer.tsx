@@ -2,7 +2,6 @@ import { Box, Flex, Link, Text } from '@chakra-ui/react';
 import { RiGithubFill } from 'react-icons/ri';
 
 import SpokerLogo from '~/lib/components/shared/SpokerLogo';
-import SupportCTA from '~/lib/components/support/SupportCTA';
 import { packageInfo } from '~/lib/constants/packageInfo';
 import { EVENT_TYPE_LINK } from '~/lib/constants/tracking';
 import { trackEvent } from '~/lib/utils/trackEvent';
@@ -48,7 +47,6 @@ const Footer = () => {
       </Flex>
 
       <Flex marginLeft={{ md: 'auto' }} alignItems="center" gridGap={6}>
-        <SupportCTA />
         <Flex justifyContent="center" alignItems="center" gap={2}>
           <Link
             href={`${packageInfo.repository.url}/blob/main/CHANGELOG.md`}
