@@ -160,7 +160,7 @@ const CurrentVotesWrapper = () => {
             onChange={(e) =>
               handleUpdateHideLabel(e.target.value as HideLabelOptionsType)
             }
-            value={config?.hideLabel ?? 'monkey'}
+            value={config?.hideLabel ?? 'chicken'}
           >
             {hideLabelOptions.map((hideLabelOption) => (
               <Text as="option" value={hideLabelOption} key={hideLabelOption}>

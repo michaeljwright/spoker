@@ -26,13 +26,13 @@ type HideLabelType = Record<
 >;
 
 export const hideLabel: HideLabelType = {
-  monkey: {
-    empty: '🙊',
-    selected: '🙉',
-  },
   chicken: {
     empty: '🥚',
     selected: '🐣',
+  },
+  monkey: {
+    empty: '🙊',
+    selected: '🙉',
   },
   cow: {
     empty: '🐄',

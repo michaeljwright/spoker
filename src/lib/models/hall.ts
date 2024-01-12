@@ -1,8 +1,6 @@
 import { customAlphabet } from 'nanoid';
 import type { Input } from 'valibot';
 import { boolean, minLength, object, optional, regex, string } from 'valibot';
-
-import { ALLOWED_CHAR_CHECK } from '~/lib/constants/allowedValues';
 import { requiredString } from '~/lib/models/primitives';
 
 const nanoid = customAlphabet('1234567890abcdef', 12);
@@ -17,10 +15,7 @@ export const initialValues: CreateRoomFormType = {
 
 export const createRoomFormSchema = object({
   name: requiredString('Name must be filled'),
-  id: string([
-    minLength(1, 'id must be filled'),
-    regex(ALLOWED_CHAR_CHECK, 'room id contain unallowed character'),
-  ]),
+  id: string(minLength(1, 'id must be filled')),
   isPrivate: boolean(),
   password: optional(string()),
 });
