@@ -1,4 +1,4 @@
-import { child, get, set, update } from 'firebase/database';
+import { child, get, update } from 'firebase/database';
 
 import { getCurrentUser } from '~/lib/services/firebase/auth/getCurrentUser';
 import { roomsData } from '~/lib/services/firebase/room/common';
@@ -11,12 +11,6 @@ export const rejoinRoom = async (roomId: string, role?: RoleType | null) => {
     async (snap) => {
       if (snap.exists()) {
         await update(snap.ref, {
-          isConnected: true,
-        });
-      } else {
-        await set(child(roomsData, `${roomId}/users/${currentUser?.uid}`), {
-          name: currentUser?.displayName,
-          role,
           isConnected: true,
         });
       }

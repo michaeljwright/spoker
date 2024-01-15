@@ -42,7 +42,7 @@ const HallPage = () => {
     setBusy(true);
     if (currentUser) {
       currentUser.reload().then(() => {
-        setIsEmailVerified(currentUser.emailVerified);
+        setIsEmailVerified(true);
         setBusy(false);
       });
     } else {
